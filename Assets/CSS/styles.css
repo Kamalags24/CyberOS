@@ -1,0 +1,201 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inconsolata', monospace;
+    overflow: hidden;
+}
+.desktop {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to bottom, #000033, #000066);
+    overflow: auto;
+}
+.icon {
+    width: 80px;
+    height: 90px;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+.icon:hover {
+    transform: scale(1.1);
+}
+.icon-emoji {
+    font-size: 48px;
+    margin-bottom: 5px;
+}
+.window {
+    position: absolute;
+    background-color: rgba(25, 25, 25, 0.8);
+    border: 1px solid #00BFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+    overflow: hidden;
+    min-width: 300px;
+    min-height: 200px;
+    transition: box-shadow 0.3s ease;
+}
+.window:hover {
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.8);
+}
+.window-header {
+    background-color: #00BFFF;
+    color: #fff;
+    padding: 5px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.window-title {
+    margin: 0;
+    font-size: 14px;
+}
+.window-controls span {
+    margin-left: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.window-controls span:hover {
+    color: #1E90FF;
+}
+.window-content {
+    height: calc(100% - 25px);
+}
+.window-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(25, 25, 25, 0.8);
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+}
+.start-button {
+    background-color: #00BFFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.start-button:hover {
+    background-color: #1E90FF;
+}
+.taskbar-item {
+    background-color: rgba(0, 191, 255, 0.3);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+.taskbar-item:hover {
+    background-color: rgba(0, 191, 255, 0.5);
+}
+.start-menu {
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    background-color: rgba(25, 25, 25, 0.9);
+    border: 1px solid #00BFFF;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.start-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+.start-menu a:hover {
+    background-color: rgba(0, 191, 255, 0.3);
+}
+.import-bg-button, .screen-saver-button {
+    position: fixed;
+    bottom: 10px;
+    background-color: #00BFFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 9999;
+}
+.import-bg-button {
+    right: 280px;
+}
+.screen-saver-button {
+    right: 420px;
+}
+.import-bg-button:hover, .screen-saver-button:hover {
+    background-color: #1E90FF;
+}
+#bg-input {
+    display: none;
+}
+.datetime {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px 3px #000;
+    z-index: 9999;
+}
+
+@media (max-width: 768px) {
+    .icon {
+        width: 60px;
+        height: 70px;
+        font-size: 10px;
+    }
+    .icon-emoji {
+        font-size: 36px;
+    }
+    .window {
+        width: 90% !important;
+        height: 80% !important;
+        left: 5% !important;
+        top: 10% !important;
+    }
+    .start-menu {
+        width: 80%;
+        max-width: 300px;
+    }
+    .import-bg-button, .screen-saver-button {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+    .import-bg-button {
+        right: 240px;
+    }
+    .screen-saver-button {
+        right: 360px;
+    }
+    .datetime {
+        font-size: 12px;
+    }
+}
